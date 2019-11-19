@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jmeter-reporter
+  labels:
+    jmeter_mode: reporter
+spec:
+  ports:
+    - port: 80
+      targetPort: 8686
+  selector:
+    jmeter_mode: reporter
+  type: LoadBalancer
